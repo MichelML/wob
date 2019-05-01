@@ -6,6 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+    "wob": "index.js"
+  },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "gm": "^1.23.1",
+    "jimp": "^0.6.4",
+    "sharp": "^0.22.1",
+    "yargs": "^13.2.2"
+  }
 }
