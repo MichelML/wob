@@ -10,6 +10,10 @@ const argv = require("yargs")
     alias: "b",
     default: "black"
   })
+  .option("color", {
+    alias: "c",
+    default: "white"
+  })
   .option("message", {
     alias: "m"
   }).argv;
@@ -36,14 +40,14 @@ const wob = async ({
     bgColor === "black" || !bgColor
       ? { bg: "./blacksquare.jpg", font: "#FFFFFF" }
       : { bg: "./whitesquare.jpg", font: "#000" };
-  const image = await Jimp.read(colors.bg);
+  const image = await new Jimp(2160, 2160, bgColor);
   const text = await ttf(
     message,
     width,
     height,
     "./fonts/montserrat/Montserrat-ExtraBold.ttf",
     fontSize,
-    colors.font
+    argv.color
   );
   image.composite(text, marginX, marginY);
   const file = message.replace(/[^a-z0-9+]+/gi, "") + ".jpg";
