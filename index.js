@@ -18,13 +18,14 @@ const argv = require("yargs")
     alias: "m"
   })
   .option("font", {
-    alias: "f"
+    alias: "f",
+    default: 200
   }).argv;
 
 const imageSize = 2160;
 const message = argv.message;
 const width = 1800;
-const fontSize = parseInt(argv.font || 200, 10);
+const fontSize = parseInt(argv.font, 10);
 const lines = Math.ceil((message.length * fontSize) / width);
 const height = lines * 1.1 * fontSize;
 const marginX = (imageSize - width) / 2;
