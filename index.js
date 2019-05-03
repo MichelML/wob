@@ -16,12 +16,15 @@ const argv = require("yargs")
   })
   .option("message", {
     alias: "m"
+  })
+  .option("font", {
+    alias: "f"
   }).argv;
 
 const imageSize = 2160;
-const message = process.argv[process.argv.length - 1];
+const message = argv.message;
 const width = 1800;
-const fontSize = 196;
+const fontSize = agrv.font || 200;
 const lines = Math.ceil((message.length * fontSize) / width);
 const height = lines * 1.1 * fontSize;
 const marginX = (imageSize - width) / 2;
@@ -36,16 +39,12 @@ const wob = async ({
   resize,
   bgColor
 }) => {
-  const colors =
-    bgColor === "black" || !bgColor
-      ? { bg: "./blacksquare.jpg", font: "#FFFFFF" }
-      : { bg: "./whitesquare.jpg", font: "#000" };
   const image = await new Jimp(2160, 2160, bgColor);
   const text = await ttf(
     message,
     width,
     height,
-    "./fonts/montserrat/Montserrat-ExtraBold.ttf",
+    __dirname + "/fonts/montserrat/Montserrat-ExtraBold.ttf",
     fontSize,
     argv.color
   );
