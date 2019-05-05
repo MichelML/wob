@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const Jimp = require("jimp");
-const ttf = require("./ttf");
 const sharp = require("sharp");
+const ttf = require("./ttf");
 const argv = require("yargs")
   .option("resize", {
     alias: "r"
