@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 const Jimp = require("jimp");
 const sharp = require("sharp");
+const path = require("path");
+const fontsMap = require("./fonts-map");
 const ttf = require("./ttf");
 const argv = require("yargs")
   .option("resize", {
@@ -17,15 +19,21 @@ const argv = require("yargs")
   .option("message", {
     alias: "m"
   })
-  .option("font", {
-    alias: "f",
+  .option("fontsize", {
+    alias: "s",
     default: 200
+  })
+  .option("fontfamily", {
+    alias: "f",
+    default: "montserrat"
   }).argv;
+
+console.log(argv.fontfamily);
 
 const imageSize = 2160;
 const message = argv.message;
 const width = 1800;
-const fontSize = parseInt(argv.font, 10);
+const fontSize = parseInt(argv.fontsize, 10);
 const lines = Math.ceil((message.length * fontSize) / width);
 const height = lines * 1.1 * fontSize;
 const marginX = (imageSize - width) / 2;
@@ -45,7 +53,7 @@ const wob = async ({
     message,
     width,
     height,
-    __dirname + "/fonts/montserrat/Montserrat-ExtraBold.ttf",
+    path.join(__dirname, "fonts", fontsMap[argv.fontfamily]),
     fontSize,
     argv.color
   );
