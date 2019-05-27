@@ -28,8 +28,6 @@ const argv = require("yargs")
     default: "montserrat"
   }).argv;
 
-console.log(argv.fontfamily);
-
 const imageSize = 2160;
 const message = argv.message;
 const width = 1800;
@@ -72,6 +70,9 @@ const wob = async ({
     console.log("No messsage provided.");
     process.exit();
   }
+
+  console.log(`Using font: ${argv.fontfamily}`);
+
   await wob({
     message: argv.message,
     width,
