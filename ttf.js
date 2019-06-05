@@ -2,20 +2,20 @@ const im = require("gm").subClass({ imageMagick: true });
 const jimp = require("jimp");
 
 module.exports = async (msg, x, y, path, size, HexColor) => {
-  if (!x || !y)
-    throw new Error("[ttfFont][ALERT] Error: X or Z is not specified !");
-  if (!path || path === undefined)
-    throw new Error(
-      "[ttfFont][ALERT] Error: Path is not specified or is undefined !"
-    );
-  if (!size || size === undefined)
-    throw new Error(
-      "[ttfFont][ALERT] Error: Size is not specified or is undefined !"
-    );
-  if (!HexColor || HexColor === undefined)
-    throw new Error(
-      "[ttfFont][ALERT] Error: HexColor is not specified or is undefined !"
-    );
+  (!x || !y)
+    && throw new Error("[ttfFont][ALERT] Error: X or Z is not specified !");
+  (!path || path === undefined)
+    && throw new Error(
+        "[ttfFont][ALERT] Error: Path is not specified or is undefined !"
+        );
+  (!size || size === undefined)
+    && throw new Error(
+        "[ttfFont][ALERT] Error: Size is not specified or is undefined !"
+        );
+  (!HexColor || HexColor === undefined)
+    && throw new Error(
+        "[ttfFont][ALERT] Error: HexColor is not specified or is undefined !"
+        );
 
   return new Promise(async (resolve, reject) => {
     let img = im(x, y).command("convert"); //width, height
