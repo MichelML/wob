@@ -15,5 +15,5 @@ This will output:
 <img src="helloworld400.jpg" />  
 Run the following to see all options:  
 ```  
-wob -h   
+wob --help   
 ```

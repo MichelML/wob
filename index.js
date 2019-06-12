@@ -6,27 +6,42 @@ const fontsMap = require("./fonts-map");
 const ttf = require("./ttf");
 const argv = require("yargs")
 .option("resize", {
-	alias: "r"
+	alias: "r",
+	type: "number",
+	describe: "Resize picture to nxn pixels"
 })
 .option("bgColor", {
 	alias: "b",
-	default: "black"
+	type: "string",
+	default: "black",
+	describe: "CSS/Hex value of the background"
 })
 .option("color", {
 	alias: "c",
-	default: "white"
+	type: "string",
+	default: "white",
+	describe: "CSS/Hex value of the font"
 })
 .option("message", {
-	alias: "m"
+	alias: "m",
+	type: "string",
+	describe: "Message"
 })
 .option("fontsize", {
 	alias: "s",
-	default: 200
+	type: "number",
+	default: 200,
+	describe: "Font size in pixels"
 })
 .option("fontfamily", {
 	alias: "f",
-	default: "montserrat"
-}).argv;
+	type: "string",
+	choices: ["anton", "comfortaa", "karla", "roboto", "montserrat"],
+	default: "montserrat",
+	describe: "Font-family"
+})
+.help()
+.argv;
 
 const imageSize = 2160;
 const message = argv.message;
