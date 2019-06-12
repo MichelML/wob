@@ -9,10 +9,10 @@ sudo npm i -g .
 
 ### Usage  
 ```  
-wob -m "Hello World"   
+wob -m "Hello World" -r 400  
 ```  
 This will output:   
-<img src="helloworld.jpg" />  
+<img src="helloworld400.jpg" />  
 Run the following to see all options:  
 ```  
 wob -h   
