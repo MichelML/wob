@@ -25,6 +25,7 @@ const argv = require("yargs")
 .option("message", {
 	alias: "m",
 	type: "string",
+	default: "",
 	describe: "Message"
 })
 .option("fontsize", {
