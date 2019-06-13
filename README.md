@@ -18,7 +18,7 @@ It adapts to multiple lines text:
 ```   
 wob -m "This is a little bit awesome." -r 400  
 ```  
-This will output:    
+will output:    
 <img src="Thisisalittlebitawesome400.jpg" />    
 
 
