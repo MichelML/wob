@@ -4,6 +4,7 @@ const sharp = require("sharp");
 const path = require("path");
 const fontsMap = require("./fonts-map");
 const ttf = require("./ttf");
+const version = require(__dirname + "/package.json").version;
 const argv = require("yargs")
 .option("resize", {
 	alias: "r",
@@ -41,7 +42,13 @@ const argv = require("yargs")
 	default: "montserrat",
 	describe: "Font-family"
 })
-.help()
+// version
+.alias('v', 'version')
+.version(version)
+.describe('v', 'show version information')
+// help text
+.alias('h', 'help')
+.help('help')
 .argv;
 
 const imageSize = 2160;
