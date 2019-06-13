@@ -12,7 +12,17 @@ sudo npm i -g .
 wob -m "Hello World" -r 400  
 ```  
 This will output:   
-<img src="helloworld400.jpg" />  
+<img src="helloworld400.jpg" />    
+  
+It adapts to multiple lines text:   
+```   
+wob -m "This is a little bit awesome." -r 400  
+```  
+This will output:    
+<img src="Thisisalittlebitawesome400.jpg" />    
+
+
+### Help
 Run the following to see all options:  
 ```  
 wob --help   
@@ -20,7 +30,6 @@ wob --help
 This should output something similar to:  
 ```
 Options:
-  --version         Show version number                                [boolean]
   --resize, -r      Resize picture to nxn pixels                        [number]
   --bgColor, -b     CSS/Hex value of the background  [string] [default: "black"]
   --color, -c       CSS/Hex value of the font        [string] [default: "white"]
@@ -29,6 +38,7 @@ Options:
   --fontfamily, -f  Font-family
        [string] [choices: "anton", "comfortaa", "karla", "roboto", "montserrat"]
                                                          [default: "montserrat"]
-  --help            Show help                                          [boolean]  
+  -v, --version     Show version number                                [boolean]
+  -h, --help        Show help                                          [boolean]
 ```  
 
