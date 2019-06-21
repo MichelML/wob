@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 const Jimp = require("jimp");
 const sharp = require("sharp");
 const path = require("path");
