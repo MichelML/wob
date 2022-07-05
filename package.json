@@ -9,7 +9,7 @@
   "bin": {
     "wob": "index.js"
   },
-  "author": "",
+  "author": "michmoreau.l@gmail.com",
   "license": "ISC",
   "dependencies": {
     "gm": "^1.23.1",
