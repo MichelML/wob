@@ -13,7 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "gm": "^1.23.1",
-    "jimp": "^0.6.4",
+    "jimp": "^0.22.7",
     "sharp": "^0.30.5",
     "yargs": "^13.2.2"
   }
